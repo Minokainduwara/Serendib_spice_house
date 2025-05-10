@@ -14,6 +14,16 @@
 
         $login = $conn->query("SELECT * FROM users WHERE email='$email'");
         $login->execute();
+
+        $fetch = $login->fetch(PDO::FETCH_ASSOC);
+
+        if($login->rowCount() > 0){
+            if(password_verify($password, $fetch['mypassword'])){
+                echo "Logged In";
+            }else{
+                echo "<script> alert('password is incorrect'); </script>";
+            }
+        }
     }
 
 
