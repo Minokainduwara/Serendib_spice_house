@@ -13,7 +13,7 @@
             $email = $_POST['email'];
             $password = $_POST['password'];
 
-            $insert = $conn-prepare("INSERT INTO users (username, email, mypassword) 
+            $insert = $conn->prepare("INSERT INTO users (username, email, mypassword) 
               VALUES (:username, :email, :mypassword)");
 
             $insert->execute([
