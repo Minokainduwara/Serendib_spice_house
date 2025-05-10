@@ -1,3 +1,13 @@
+<?php
+
+//Sessions
+    session_start();
+
+    define("APPURL","http://localhost/serendib_spice_house");
+
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>

@@ -19,7 +19,12 @@
 
         if($login->rowCount() > 0){
             if(password_verify($password, $fetch['mypassword'])){
-                echo "Logged In";
+                //echo "Logged In";
+                //Create Session Variables
+
+                $_SESSION['username'] = $fetch['username'];
+                $_SESSION['user_id'] = $fetch['id'];
+                header("location: ".APPURL."");
             }else{
                 echo "<script> alert('password or email is incorrect'); </script>";
             }
