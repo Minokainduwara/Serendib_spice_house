@@ -19,7 +19,7 @@
             $insert->execute([
                 ':username' => $username,
                 ':email' => $email,
-                ':mypassword' => $password,
+                ':mypassword' => password_hash($password,PASSWORD_DEFAULT),
             ]);
 
             header("location: ;login.php");
