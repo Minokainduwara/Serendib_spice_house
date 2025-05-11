@@ -30,3 +30,6 @@ CREATE TABLE `spice`.`products` (
     `status` INT(1) NOT NULL DEFAULT '1' , 
     `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , 
     PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+
+INSERT INTO `products` (`id`, `name`, `image`, `price`, `file`, `description`, `status`, `created_at`) VALUES (NULL, 'Cinnamon Stick Bulk Package', 'cinnamon.jpeg', '20', 'file.pdf', 'Enjoy the true cinnamon flavor from our Ceylon Cinnamon Stick Bulk Package, filled with 5kg of the best cinnamon sticks being sourced directly from our plantations. Each stick is made from real Ceylon cinnamon (Cinnamomum verum / Cinnamomum zeylanicum), assuring that you receive only the best spice.', '1', current_timestamp()), (NULL, 'Pepper', 'pepper.jpeg', '10', 'file2.pdf', 'Discover the powerful flavor that comes from Sri Lankan Black Pepper, available in bulk. These little, dried berries from the Piper nigrum vine are completely selected to assure the greatest quality and strongest flavor.', '1', current_timestamp())
