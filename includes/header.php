@@ -60,7 +60,7 @@
                     <li><a class="dropdown-item" href="#">Action</a></li>
                     <li><a class="dropdown-item" href="#">Another action</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="<?php echo APPURL; ?>/auth/logout.php">Log Out</a></li>
+                    <li><a class="dropdown-item" href="<?php echo APPURL; ?>/auth/logout.php">LogOut</a></li>
                 </ul>
                 </li>
 
