@@ -4,6 +4,10 @@
 
 
 <?php
+
+    if(isset($_SESSION['username'])){
+        header("location: ".APPURL."");
+    }
     if(isset($_POST['submit'])){
         if(empty($_POST['email']) OR empty($_POST['password'])){
             echo "<script> alert('one or more inputs are empty'); </script>";
