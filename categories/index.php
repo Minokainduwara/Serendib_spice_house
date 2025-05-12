@@ -1,5 +1,4 @@
 <?php require "../includes/header.php" ?>
-<?php require "../includes/header.php" ?> 
     <div class="container">  
         <div class="row mt-5">
                     <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">

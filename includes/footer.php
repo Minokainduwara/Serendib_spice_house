@@ -1,75 +1,41 @@
- <footer class="bg-dark text-white text-center text-lg-start" style="margin-top: 40px">
-        <!-- Grid container -->
-        <div class="container p-4">
-            <!--Grid row-->
-            <div class="row">
-            <!--Grid column-->
-            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                <h5 class="text-uppercase">Footer Content</h5>
+<footer class="bg-primary text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+            <!-- Facebook -->
+            <a data-mdb-ripple-init class="btn btn-outline-primary btn-floating m-1 border border-white" href="#!" role="button"><i class="fab fa-facebook-f text-white"></i></a>
 
-                <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-                molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
-                voluptatem veniam, est atque cumque eum delectus sint!
-                </p>
-            </div>
-            <!--Grid column-->
+            <!-- Twitter -->
+            <a data-mdb-ripple-init class="btn btn-outline-primary btn-floating m-1 border border-white" href="#!" role="button"><i class="fab fa-twitter text-white"></i></a>
 
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase">Links</h5>
+            <!-- Google -->
+            <a data-mdb-ripple-init class="btn btn-outline-primary btn-floating m-1 border border-white" href="#!" role="button"><i class="fab fa-google text-white"></i></a>
 
-                <ul class="list-unstyled mb-0">
-                <li>
-                    <a href="#!" class="text-white">Link 1</a>
-                </li>
-                <li>
-                    <a href="#!" class="text-white">Link 2</a>
-                </li>
-                <li>
-                    <a href="#!" class="text-white">Link 3</a>
-                </li>
-                <li>
-                    <a href="#!" class="text-white">Link 4</a>
-                </li>
-                </ul>
-            </div>
-            <!--Grid column-->
+            <!-- Instagram -->
+            <a data-mdb-ripple-init class="btn btn-outline-primary btn-floating m-1 border border-white" href="#!" role="button"><i class="fab fa-instagram text-white"></i></a>
 
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase mb-0">Links</h5>
+            <!-- Linkedin -->
+            <a data-mdb-ripple-init class="btn btn-outline-primary btn-floating m-1 border border-white" href="#!" role="button"><i class="fab fa-linkedin-in text-white"></i></a>
 
-                <ul class="list-unstyled">
-                <li>
-                    <a href="#!" class="text-white">Link 1</a>
-                </li>
-                <li>
-                    <a href="#!" class="text-white">Link 2</a>
-                </li>
-                <li>
-                    <a href="#!" class="text-white">Link 3</a>
-                </li>
-                <li>
-                    <a href="#!" class="text-white">Link 4</a>
-                </li>
-                </ul>
-            </div>
-            <!--Grid column-->
-            </div>
-            <!--Grid row-->
-        </div>
-        <!-- Grid container -->
+            <!-- Github -->
+            <a data-mdb-ripple-init class="btn btn-outline-primary btn-floating m-1 border border-white" href="#!" role="button"><i class="fab fa-github text-white"></i></a>
+        </section>
+        <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
 
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2020 Copyright:
-            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-        </div>
-        <!-- Copyright -->
-        </footer>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="" crossorigin="anonymous"></script>
-  </body>
- 
-</html>
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2025 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">Serendib Spice House</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+    <!-- Footer -->
+
+    <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
