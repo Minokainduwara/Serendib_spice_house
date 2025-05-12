@@ -30,4 +30,5 @@
 
             <?php endforeach; ?>
          </div>
+                </div>
 <?php require "includes/footer.php"  ?>
