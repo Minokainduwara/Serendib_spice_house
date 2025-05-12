@@ -15,7 +15,7 @@
                         <div class="card-body" >
                             <h5 class="d-inline"><b><?php echo $product->name; ?></b> </h5>
                             <h5 class="d-inline"><div class="text-muted d-inline">($<?php echo $product->price ?>)</div></h5>
-                            <p><?php echo $product->description; ?></p>
+                            <p><?php echo substr($product->description,0,120); ?></p>
                             <a href="<?php echo APPURL; ?>/shopping/single.php?=id<?php echo $product->id; ?>"  class="btn btn-primary w-100 rounded my-2"> More<i class="fas fa-arrow-right"></i> </a>      
         
                         </div>
@@ -31,4 +31,5 @@
             <?php endforeach; ?>
          </div>
                 </div>
+        <br>
 <?php require "includes/footer.php"  ?>
