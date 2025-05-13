@@ -6,6 +6,18 @@
 
     $allRows = $rows->fetchAll(PDO::FETCH_OBJ);
 ?>
+
+<div>
+    <!-- Elfsight Slider | Untitled Slider -->
+<script src="https://static.elfsight.com/platform/platform.js" async></script>
+<div class="elfsight-app-4d21b927-1946-443e-8b8c-09c0e3491007" data-elfsight-app-lazy></div>
+
+</div>
+
+<div>
+<script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
+<div class="commonninja_component pid-f2bf87ae-ad73-417d-a9b6-0f8473760983"></div>
+</div>
 <div class="container">    
         <div class="row mt-5">
                 <?php foreach($allRows as $product) : ?>
