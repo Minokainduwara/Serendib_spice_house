@@ -105,7 +105,19 @@
 <script>
     $(document).ready(function(){
         $(document).on("submit", function(e){
+
+            e.preventDefault();
             var formdata = $("#form-data").serialize() + '&submit = submit';
+
+            $.ajax({
+                type: "post",
+                url: "single.php?id=<?php echo $id; ?>",
+                data: formdata,
+                success: function(data){
+                    alert("Product added to cart");
+                    
+                },
+            })
         })
     });
 </script>
