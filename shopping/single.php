@@ -4,6 +4,30 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
 <?php 
+
+    if(isset($_POST['submit'])){
+        $pro_id = $_POST['pro_id'];
+        $pro_name = $_POST['pro_name'];
+        $pro_image = $_POST['pro_image'];
+        $pro_price = $_POST['pro_price'];
+        $pro_amount = $_POST['pro_amount'];
+        $user_id = $_POST['user_id'];
+        $pro_file = $_POST['pro_file'];
+
+        $insert = $conn->prepare("INSERT INTO cart (pro_id, pro_name, pro_image, pro_price, pro_amount, 
+            user_id, pro_file) VALUES (:pro_id, :pro_name, :pro_image, :pro_price, :pro_amount, :user_id, :pro_file)");
+        
+        $insert->execute([
+            ':pro_id' => $pro_id,
+            ':pro_name' => $pro_name,
+            ':pro_image' => $pro_image,
+            ':pro_price' => $pro_price,
+            ':pro_amount' => $pro_amount,
+            ':user_id' => $user_id,
+            ':pro_file' => $pro_file
+        ]);
+    }
+
     if(isset($_GET['id'])){
         $id = $_GET['id'];
         $row = $conn->query("SELECT * FROM products WHERE status = 1 AND id = '$id'");
