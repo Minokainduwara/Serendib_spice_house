@@ -6,11 +6,9 @@
         $id = $_GET['id'];
         $row = $conn->query("SELECT * FROM products WHERE status = 1 AND id = '$id'");
         $row->execute();
-
         $product = $row->fetch(PDO::FETCH_OBJ);
     } else {
-        header("Location: index.php");
-        exit();
+        echo "404";
     }
 
 ?>

@@ -24,7 +24,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-primary" >
     <div class="container" style="margin-top: none">
-        <a class="navbar-brand  text-white" href="<?php echo APPURL; ?>"><img src="images/Serendib.svg" alt="Serendib Spice House" width="" height="50px" alt=""></a>
+        <a class="navbar-brand  text-white" href="<?php echo APPURL; ?>">Serendib Spice House</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
