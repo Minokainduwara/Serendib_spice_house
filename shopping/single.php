@@ -1,6 +1,8 @@
 <?php require "../includes/header.php" ?>
 <?php require "../config/config.php" ?>
 
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
 <?php 
     if(isset($_GET['id'])){
         $id = $_GET['id'];
@@ -33,8 +35,38 @@
                                     </div>
                                 </div>
                                 <p class="about"><?php echo $product->description; ?></p>
+
+                                <form method="post" id="form-data">
+                                    <div class="">
+                                        <input type="text" name="pro_id" value="<?php echo $product->id; ?>" class="form-control">
+                                    </div>
+
+                                    <div class="">
+                                        <input type="text" name="pro_name" value="<?php echo $product->name; ?>" class="form-control">
+                                    </div>
+
+                                    <div class="">
+                                        <input type="text" name="pro_image" value="<?php echo $product->image; ?>" class="form-control">
+                                    </div>
+
+                                    <div class="">
+                                        <input type="text" name="pro_price" value="<?php echo $product->price; ?>"  class="form-control">
+                                    </div>
+
+                                    <div class="">
+                                        <input type="text" name="pro_amount" value="1"  class="form-control">
+                                    </div>
+
+                                    <div class="">
+                                        <input type="text" name="user_id" value="<?php echo $_SESSION['user_id']; ?>"  class="form-control">
+                                    </div>
+
+                                    <div class="">
+                                        <input type="text" name="pro_file" value="<?php echo $product->file; ?>"  class="form-control">
+                                    </div>
+                                </form>
                               
-                                <div class="cart mt-4 align-items-center"> <button class="btn btn-primary text-uppercase mr-2 px-4"><i class="fas fa-shopping-cart"></i> Add to cart</button> </div>
+                                <div class="cart mt-4 align-items-center"> <button name="submit" type="submit" class="btn btn-primary text-uppercase mr-2 px-4"><i class="fas fa-shopping-cart"></i> Add to cart</button> </div>
                             </div>
                         </div>
                     </div>
@@ -44,3 +76,9 @@
   </div>
 
 <?php require "../includes/footer.php"  ?>
+
+<script>
+    $(document).ready(function(){
+        console.log("hello");
+    });
+</script>
