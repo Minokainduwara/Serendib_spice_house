@@ -30,6 +30,14 @@
 
     if(isset($_GET['id'])){
         $id = $_GET['id'];
+
+        //Checking for product in cart
+        if(isset($_SESSION['user_id'])){
+            $select = $conn->query("SELECT * FROM cart WHERE pro_id = '$id' AND user_id='$_SESSION[user_id]'");
+            $select->execute(); 
+        }
+
+        //getting data for every product
         $row = $conn->query("SELECT * FROM products WHERE status = 1 AND id = '$id'");
         $row->execute();
         $product = $row->fetch(PDO::FETCH_OBJ);
@@ -90,7 +98,14 @@
                                     </div>
                                 
                               
-                                <div class="cart mt-4 align-items-center"> <button id="submit" name="submit" type="submit" class="btn btn-primary text-uppercase mr-2 px-4"><i class="fas fa-shopping-cart"></i> Add to cart</button> </div>
+                                <div class="cart mt-4 align-items-center"> 
+                                    <?php if($select->rowcount() > 0) :  ?>
+                                        <button id="submit" name="submit" type="submit" disabled class="btn btn-primary text-uppercase mr-2 px-4"><i class="fas fa-shopping-cart"></i> Add to cart</button> 
+                                    <?php else : ?>
+                                        <button id="submit" name="submit" type="submit" class="btn btn-primary text-uppercase mr-2 px-4"><i class="fas fa-shopping-cart"></i> Add to cart</button> 
+                                    <?php endif; ?>
+
+                                </div>
                                 </form>
                             </div>
                         </div>
