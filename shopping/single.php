@@ -47,7 +47,7 @@
 
 ?>
   <div class="container mt-5 mb-5">
-        <div class="row d-flex justify-content-center">
+        <div class="row d-flex justify-content-center mt-4">
             <div class="col-md-10">
                 <div class="card">
                     <div class="row">
@@ -92,7 +92,7 @@
                                     <div class="">
                                         <input type="hidden" name="pro_file" value="<?php echo $product->file; ?>"  class="form-control">
                                     </div>
-                                    
+
                                     <?php if(isset($_SESSION['user_id'])) : ?>
                                         <div class="">
                                             <input type="text" name="user_id" value="<?php echo $_SESSION['user_id']; ?>"  class="form-control">
