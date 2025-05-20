@@ -90,7 +90,7 @@
                                     </div>
                                 
                               
-                                <div class="cart mt-4 align-items-center"> <button name="submit" type="submit" class="btn btn-primary text-uppercase mr-2 px-4"><i class="fas fa-shopping-cart"></i> Add to cart</button> </div>
+                                <div class="cart mt-4 align-items-center"> <button id="submit" name="submit" type="submit" class="btn btn-primary text-uppercase mr-2 px-4"><i class="fas fa-shopping-cart"></i> Add to cart</button> </div>
                                 </form>
                             </div>
                         </div>
@@ -115,6 +115,7 @@
                 data: formdata,
                 success: function(data){
                     alert("Product added to cart");
+                    $("#submit").html("<i class='fas fa-shopping-cart'></i> Added to cart").prop("disabled", true);
                     
                 },
             })
