@@ -64,9 +64,10 @@
                                     <div class="">
                                         <input type="text" name="pro_file" value="<?php echo $product->file; ?>"  class="form-control">
                                     </div>
-                                </form>
+                                
                               
                                 <div class="cart mt-4 align-items-center"> <button name="submit" type="submit" class="btn btn-primary text-uppercase mr-2 px-4"><i class="fas fa-shopping-cart"></i> Add to cart</button> </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -79,6 +80,8 @@
 
 <script>
     $(document).ready(function(){
-        console.log("hello");
+        $(document).on("submit", function(e){
+            var formdata = $("#form-data").serialize() + '&submit = submit';
+        })
     });
 </script>
