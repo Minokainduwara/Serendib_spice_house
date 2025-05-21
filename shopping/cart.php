@@ -1,188 +1,74 @@
-<?php require "../includes/header.php"; ?>
-<?php require "../config/config.php"; ?>  
-<?php 
-  if (!isset($_SESSION['username'])) {
-    header("location: " . APPURL . "");
-  }
+<?php
+require "../includes/header.php";
+require "../config/config.php";
 
-  $products = $conn->query("SELECT * FROM cart WHERE user_id = '$_SESSION[user_id]'");
-  $products->execute();
-  $allProducts = $products->fetchAll(PDO::FETCH_OBJ);
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php"); // redirect if not logged in
+    exit;
+}
 
-  if (isset($_POST['submit'])) {
-    $price = $_POST['price'];
-    $_SESSION['price'] = $price;
-    header("location: checkout.php");
-  }
+$user_id = $_SESSION['user_id'];
+
+// Fetch all cart items for this user
+$stmt = $conn->prepare("SELECT * FROM cart WHERE user_id = :user_id");
+$stmt->execute([':user_id' => $user_id]);
+$cartItems = $stmt->fetchAll(PDO::FETCH_OBJ);
 ?>
 
-<div class="row d-flex justify-content-center align-items-center h-100 mt-5">
-  <div class="col-12">
-    <div class="card card-registration card-registration-2" style="border-radius: 15px;">
-      <div class="card-body p-0">
-        <div class="row g-0">
-          <div class="col-lg-8">
-            <div class="p-5">
-              <div class="d-flex justify-content-between align-items-center mb-5">
-                <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
-              </div>
+<div class="container mt-5">
+    <h2>Your Shopping Cart</h2>
+    <?php if (count($cartItems) == 0): ?>
+        <p>Your cart is empty.</p>
+    <?php else: ?>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php 
+                $grandTotal = 0;
+                foreach ($cartItems as $item): 
+                    $total = $item->pro_price * $item->pro_amount;
+                    $grandTotal += $total;
+                ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($item->pro_name); ?></td>
+                    <td><img src="../images/<?php echo htmlspecialchars($item->pro_image); ?>" width="70" alt=""></td>
+                    <td>$<?php echo number_format($item->pro_price, 2); ?></td>
+                    <td>
+                        <form method="post" action="update-item.php" style="display:inline-block;">
+                            <input type="hidden" name="cart_id" value="<?php echo $item->id; ?>">
+                            <input type="number" name="pro_amount" value="<?php echo $item->pro_amount; ?>" min="1" style="width:60px;">
+                            <button type="submit" class="btn btn-sm btn-primary">Update</button>
+                        </form>
+                    </td>
+                    <td>$<?php echo number_format($total, 2); ?></td>
+                    <td>
+                        <form method="post" action="delete-item.php" onsubmit="return confirm('Remove this item?');" style="display:inline-block;">
+                            <input type="hidden" name="cart_id" value="<?php echo $item->id; ?>">
+                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+                <tr>
+                    <td colspan="4" class="text-right"><strong>Grand Total:</strong></td>
+                    <td colspan="2"><strong>$<?php echo number_format($grandTotal, 2); ?></strong></td>
+                </tr>
+            </tbody>
+        </table>
 
-              <table class="table" height="190">
-                <thead>
-                  <tr>
-                    <th scope="col">Image</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Quantity</th>
-                    <th scope="col">Total Price</th>
-                    <th scope="col">Update</th>
-                    <th scope="col"><button class="delete-all btn btn-danger text-white">Clear</button></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php if (count($allProducts) > 0) : ?>
-                    <?php foreach ($allProducts as $product) : ?>
-                      <tr class="mb-4">
-                        <td><img width="100" height="100"
-                          src="<?php echo IMGURL; ?>/<?php echo $product->pro_image; ?>"
-                          class="img-fluid rounded-3" alt="Product Image"></td>
-                        <td><?php echo $product->pro_name; ?></td>
-                        <td class="pro_price"><?php echo $product->pro_price; ?></td>
-                        <td><input min="1" name="quantity" value="<?php echo $product->pro_amount; ?>" type="number"
-                          class="form-control form-control-sm pro_amount" /></td>
-                        <td class="total_price"><?php echo $product->pro_price * $product->pro_amount; ?>$</td>
-                        <td><button value="<?php echo $product->id; ?>" class="btn-update btn btn-warning text-white"><i class="fas fa-pen"></i></button></td>
-                        <td><button value="<?php echo $product->id; ?>" class="btn btn-danger text-white btn-delete"><i class="fas fa-trash-alt"></i></button></td>
-                      </tr>
-                    <?php endforeach; ?>
-                  <?php else : ?>
-                    <tr>
-                      <td colspan="7">
-                        <div class="alert alert-danger bg-danger text-white">
-                          There are no products in the cart.
-                        </div>
-                      </td>
-                    </tr>
-                  <?php endif; ?>
-                </tbody>
-              </table>
-
-              <a href="<?php echo APPURL; ?>" class="btn btn-success text-white"><i class="fas fa-arrow-left"></i> Continue Shopping</a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 bg-grey">
-            <div class="p-5">
-              <h3 class="fw-bold mb-5 mt-2 pt-1">Summary</h3>
-              <hr class="my-4">
-              <form method="POST" action="cart.php">
-                <div class="d-flex justify-content-between mb-5">
-                  <h5 class="text-uppercase">Total price</h5>
-                  <h5 class="full_price">0$</h5>
-                  <input class="inp_price" name="price" type="hidden">
-                </div>
-                <button type="submit" name="submit" class="checkout btn btn-dark btn-block btn-lg"
-                  data-mdb-ripple-color="dark">Checkout</button>
-              </form>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
+        <form method="post" action="delete-all-item.php" onsubmit="return confirm('Clear entire cart?');">
+            <button type="submit" class="btn btn-danger">Clear Cart</button>
+        </form>
+    <?php endif; ?>
 </div>
 
 <?php require "../includes/footer.php"; ?>
-
-<script>
-  $(document).ready(function () {
-
-    // Update quantity
-    $(document).on('change', '.pro_amount', function () {
-      var $el = $(this).closest('tr');
-      var pro_amount = $el.find(".pro_amount").val();
-      var pro_price = $el.find(".pro_price").text().trim();
-      var total = parseFloat(pro_price) * parseInt(pro_amount);
-      $el.find(".total_price").html(total + '$');
-      calculateTotal();
-    });
-
-    // Update item in DB
-    $(document).on('click', '.btn-update', function () {
-      var $el = $(this).closest('tr');
-      var id = $(this).val();
-      var pro_amount = $el.find(".pro_amount").val();
-
-      $.ajax({
-        type: "POST",
-        url: "update-item.php",
-        data: {
-          update: "update",
-          id: id,
-          pro_amount: pro_amount
-        },
-        success: function () {
-          alert("Quantity updated");
-          reload();
-        }
-      });
-    });
-
-    // Delete one item
-    $(document).on('click', '.btn-delete', function () {
-      var id = $(this).val();
-
-      $.ajax({
-        type: "POST",
-        url: "delete-item.php",
-        data: {
-          delete: "delete",
-          id: id
-        },
-        success: function () {
-          alert("Product deleted successfully");
-          reload();
-        }
-      });
-    });
-
-    // Delete all
-    $(".delete-all").on('click', function () {
-      $.ajax({
-        type: "POST",
-        url: "delete-all-item.php",
-        data: {
-          delete: "delete"
-        },
-        success: function () {
-          alert("All products deleted successfully");
-          reload();
-        }
-      });
-    });
-
-    function calculateTotal() {
-      var sum = 0.0;
-      $(".total_price").each(function () {
-        let text = $(this).text().replace("$", "").trim();
-        sum += parseFloat(text);
-      });
-      $(".full_price").html(sum.toFixed(2) + "$");
-      $(".inp_price").val(sum.toFixed(2));
-
-      if (sum > 0) {
-        $(".checkout").show();
-      } else {
-        $(".checkout").hide();
-      }
-    }
-
-    function reload() {
-      location.reload(); // Better than $("body").load()
-    }
-
-    // Initial calculation
-    calculateTotal();
-  });
-</script>

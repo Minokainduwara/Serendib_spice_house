@@ -1,36 +1,24 @@
-<?php require  "../includes/header.php"; ?>
-<?php require  "../config/config.php"; ?>
+<?php
+require "../config/config.php";
+session_start();
 
-<?php 
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
+}
 
-    if($_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) ) {
-        /* 
-        Up to you which header to send, some prefer 404 even if 
-        the files does exist for security
-        */
-        header( 'HTTP/1.0 403 Forbidden', TRUE, 403 );
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $cart_id = (int)$_POST['cart_id'];
+    $pro_amount = max(1, (int)$_POST['pro_amount']); // minimum 1
 
-        /* choose the appropriate page to redirect users */
-        die( header( 'location: '.APPURL.'' ));
+    // Update quantity only if this item belongs to logged in user
+    $update = $conn->prepare("UPDATE cart SET pro_amount = :pro_amount WHERE id = :cart_id AND user_id = :user_id");
+    $update->execute([
+        ':pro_amount' => $pro_amount,
+        ':cart_id' => $cart_id,
+        ':user_id' => $_SESSION['user_id']
+    ]);
+}
 
-    }
-
-
-    if(!isset($_SESSION['username'])) {
-        header("location: ".APPURL."");
-    }
-
-    if(isset($_POST['update'])) {
-        $id = $_POST['id'];
-        $pro_amount = $_POST['pro_amount'];
-
-        $update = $conn->prepare("UPDATE cart SET pro_amount='$pro_amount' WHERE 
-        id='$id'");
-        
-        $update->execute();
-    }
-
-?>
-
-
-<?php require  "../config/footer.php"; ?>
+header("Location: cart.php");
+exit;
