@@ -42,7 +42,7 @@
             </li>
 
             <li class="nav-item">
-            <a class="nav-link active  text-white" aria-current="page" href="<?php echo APPURL; ?>/categories/index.php">Categories</a>
+            <a class="nav-link active  text-white" aria-current="page" href="<?php echo APPURL; ?>/categories/cat.php">Categories</a>
             </li>
             
             <?php if(isset($_SESSION['username'])) : ?>

@@ -1,104 +1,101 @@
-<?php require "includes/header.php" ?>
+<?php require "includes/header.php"; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+    }
 
-    <div class="container">  
-        <section class="mb-4">
+    .page-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-    <!--Section heading-->
-    <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
-    <!--Section description-->
-    <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
-        a matter of hours to help you.</p>
+    .page-content {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+    
+<div class="page-wrapper">
+  <div class="page-content container py-5">
 
-    <div class="row">
+    <section class="mb-4">
+      <!--Section heading-->
+      <h2 class="h1-responsive font-weight-bold text-center my-4">Contact Us</h2>
 
-        <!--Grid column-->
+      <!--Section description-->
+      <p class="text-center w-responsive mx-auto mb-5">
+        Do you have any questions? Please do not hesitate to contact us directly. Our team will get back to you within
+        a matter of hours to help you.
+      </p>
+
+      <div class="row">
+        <!-- Contact form column -->
         <div class="col-md-9 mb-md-0 mb-5">
-            <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+          <form id="contact-form" name="contact-form" action="mail.php" method="POST">
 
-                <!--Grid row-->
-                <div class="row">
+            <div class="row mb-3">
+              <div class="col-md-6 mb-3">
+                <label for="name" class="form-label">Your name</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+              </div>
 
-                    <!--Grid column-->
-                    <div class="col-md-6">
-                        <div class="md-form mb-0">
-                            <label for="name" class="">Your name</label>
-
-                            <input type="text" id="name" name="name" class="form-control">
-                        </div>
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-md-6">
-                        <div class="md-form mb-0">
-                            <label for="email" class="">Your email</label>
-
-                            <input type="text" id="email" name="email" class="form-control">
-                        </div>
-                    </div>
-                    <!--Grid column-->
-
-                </div>
-                <!--Grid row-->
-
-                <!--Grid row-->
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="md-form mb-0">
-                            <label for="subject" class="">Subject</label>
-
-                            <input type="text" id="subject" name="subject" class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <!--Grid row-->
-
-                <!--Grid row-->
-                <div class="row">
-
-                    <!--Grid column-->
-                    <div class="col-md-12">
-
-                        <div class="md-form">
-                            <label for="message">Your message</label>
-
-                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-                        </div>
-
-                    </div>
-                </div>
-                <!--Grid row-->
-
-            </form>
-
-            <div class="text-center text-md-left mt-4">
-                <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+              <div class="col-md-6 mb-3">
+                <label for="email" class="form-label">Your email</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+              </div>
             </div>
-            <div class="status"></div>
-        </div>
-        <!--Grid column-->
 
-        <!--Grid column-->
+            <div class="mb-3">
+              <label for="subject" class="form-label">Subject</label>
+              <input type="text" id="subject" name="subject" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="message" class="form-label">Your message</label>
+              <textarea id="message" name="message" rows="4" class="form-control" required></textarea>
+            </div>
+
+            <div class="text-start mt-4">
+              <button type="submit" class="btn btn-primary">Send</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Contact info column -->
         <div class="col-md-3 text-center">
-            <ul class="list-unstyled mb-0">
-                <li><i class="fas fa-map-marker-alt fa-2x"></i>
-                    <p>San Francisco, CA 94126, USA</p>
-                </li>
-
-                <li><i class="fas fa-phone mt-4 fa-2x"></i>
-                    <p>+ 01 234 567 89</p>
-                </li>
-
-                <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                    <p>contact@mdbootstrap.com</p>
-                </li>
-            </ul>
+          <ul class="list-unstyled mb-0">
+            <li><i class="fas fa-map-marker-alt fa-2x"></i>
+              <p>San Francisco, CA 94126, USA</p>
+            </li>
+            <li><i class="fas fa-phone mt-4 fa-2x"></i>
+              <p>+01 234 567 89</p>
+            </li>
+            <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+              <p>contact@mdbootstrap.com</p>
+            </li>
+          </ul>
         </div>
-        <!--Grid column-->
+      </div>
+    </section>
 
-    </div>
+    <!-- Elfsight Banner | Untitled Banner -->
+<script src="https://static.elfsight.com/platform/platform.js" async></script>
+<div class="elfsight-app-073a2d86-581d-4df1-8746-0a8583b74ed8" data-elfsight-app-lazy></div>
 
-</section>
+  </div>
+
+  <?php require "includes/footer.php"; ?>
 </div>
 
-<?php require "includes/footer.php"  ?>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -7,6 +7,24 @@
     $allRows = $rows->fetchAll(PDO::FETCH_OBJ);
 ?>
 
+<style>
+    
+    .widget-left, .widget-right {
+      position: fixed;
+      z-index: 9999;
+    }
+
+    .widget-left {
+      bottom: 20px;
+      left: 20px;
+    }
+
+    .widget-right {
+      bottom: 20px;
+      right: 20px;
+    }
+</style>
+
 <div>
     <!-- Elfsight Slider | Untitled Slider -->
 <script src="https://static.elfsight.com/platform/platform.js" async></script>
@@ -39,4 +57,13 @@
          </div>
                 </div>
         <br>
+        <!-- Elfsight Platform Script (only once) -->
+        <script src="https://static.elfsight.com/platform/platform.js" async></script>
+
+       
+
+        <!-- AI Chatbot on Right -->
+        <div class="widget-right">
+        <div class="elfsight-app-7074321f-5adc-4725-a066-394c1e8e220f" data-elfsight-app-lazy></div>
+        </div>
 <?php require "includes/footer.php"  ?>

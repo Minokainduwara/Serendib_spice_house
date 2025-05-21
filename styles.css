@@ -1,0 +1,26 @@
+/* Make the html and body take full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Wrap all page content (header + main + footer) inside a container */
+  .wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Main content takes all remaining space */
+  .content {
+    flex: 1;
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color: #f8f9fa; /* example */
+    padding: 20px;
+    text-align: center;
+  }
+  
