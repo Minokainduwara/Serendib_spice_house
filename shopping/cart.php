@@ -98,6 +98,7 @@ $cartItems = $stmt->fetchAll(PDO::FETCH_OBJ);
 
             <br/>
             <a href="/serendib_spice_house/shopping/payment.php"><button type="submit" class="btn btn-danger">Pay</button></a>
+            <br/>
 
         <?php endif; ?>
     </div>

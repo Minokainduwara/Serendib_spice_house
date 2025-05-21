@@ -23,7 +23,6 @@
                                     <div class="text-muted">Turmeric, coriander, cumin, fenugreek, mustard, chili. Used in meat, vegetable, and lentil curries
                                  </div>
                                 </div> 
-                                <button class="btn btn-primary w-100 rounded my-2">More</button>      
                             </div>
                         </div>
                     </div>
@@ -38,7 +37,6 @@
                                     </div>
                                     
                                 </div> 
-                                <button class="btn btn-primary w-100 rounded my-2">More</button>      
                             </div>
                         </div>
                     </div>
@@ -52,7 +50,6 @@
                                     <div class="text-muted">Similar to roasted curry powder but not roasted. Used in vegetable and lentil dishes</div>
                                     
                                 </div> 
-                                <button class="btn btn-primary w-100 rounded my-2">More</button>      
                             </div>
                         </div>
                     </div>
@@ -66,7 +63,6 @@
                                     <div class="text-muted">Cinnamon, cloves, cardamom, cumin, coriander, black pepper. Adds warm flavor to Indian-style dishes</div>
                                     
                                 </div> 
-                                <button class="btn btn-primary w-100 rounded my-2">More</button>      
                             </div>
                         </div>
                     </div>
@@ -80,7 +76,6 @@
                                     <div class="text-muted">Black pepper, cumin, coriander, chili, mustard. Used in rasam soups (South Indian)</div>
                                     
                                 </div> 
-                                <button class="btn btn-primary w-100 rounded my-2">More</button>      
                             </div>
                         </div>
                     </div>
@@ -94,7 +89,6 @@
                                     <div class="text-muted">Coriander, chili, turmeric, fenugreek, cumin, curry leaves. Used in sambar (lentil stew)</div>
                                     
                                 </div> 
-                                <button class="btn btn-primary w-100 rounded my-2">More</button>      
                             </div>
                         </div>
                     </div>

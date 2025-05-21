@@ -23,7 +23,7 @@
                                     <div class="text-muted">weet and floral; used in Indian, Arabic, and Nordic cuisines.
                                  </div>
                                 </div> 
-                                <button class="btn btn-primary w-100 rounded my-2">More</button>      
+                                
                             </div>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                                     </div>
                                     
                                 </div> 
-                                <button class="btn btn-primary w-100 rounded my-2">More</button>      
+                              
                             </div>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                                     <div class="text-muted">Spicy and warming; used in baking and Asian dishes</div>
                                     
                                 </div> 
-                                <button class="btn btn-primary w-100 rounded my-2">More</button>      
+                                
                             </div>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                                     <div class="text-muted">Strong and pungent; common in spice blends and desserts</div>
                                     
                                 </div> 
-                                <button class="btn btn-primary w-100 rounded my-2">More</button>      
+                               
                             </div>
                         </div>
                     </div>
@@ -80,7 +80,7 @@
                                     <div class="text-muted">Stronger than true cinnamon; common in Chinese and South Asian cooking</div>
                                     
                                 </div> 
-                                <button class="btn btn-primary w-100 rounded my-2">More</button>      
+                                     
                             </div>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                                     <div class="text-muted">Citrus-like; common in Indian, Thai, and North African dishes</div>
                                     
                                 </div> 
-                                <button class="btn btn-primary w-100 rounded my-2">More</button>      
+                               
                             </div>
                         </div>
                     </div>
@@ -108,7 +108,7 @@
                                     <div class="text-muted">Earthy and warm; used in Indian, Middle Eastern, and Latin American cuisine</div>
                                     
                                 </div> 
-                                <button class="btn btn-primary w-100 rounded my-2">More</button>      
+                               
                             </div>
                         </div>
                     </div>
@@ -122,7 +122,7 @@
                                     <div class="text-muted">Hot and smoky; used globally in savory dishes</div>
                                     
                                 </div> 
-                                <button class="btn btn-primary w-100 rounded my-2">More</button>      
+                               
                             </div>
                         </div>
                     </div>
@@ -136,7 +136,7 @@
                                     <div class="text-muted">Sweet and licorice-like; used in Italian and Indian cuisine</div>
                                     
                                 </div> 
-                                <button class="btn btn-primary w-100 rounded my-2">More</button>      
+                                
                             </div>
                         </div>
                     </div>
@@ -150,7 +150,7 @@
                                     <div class="text-muted">Sharp and pungent; found in Indian, German, and American cooking</div>
                                     
                                 </div> 
-                                <button class="btn btn-primary w-100 rounded my-2">More</button>      
+                                  
                             </div>
                         </div>
                     </div>
@@ -164,7 +164,7 @@
                                     <div class="text-muted">Warm and sweet; grated fresh into desserts and savory sauces</div>
                                     
                                 </div> 
-                                <button class="btn btn-primary w-100 rounded my-2">More</button>      
+                                    
                             </div>
                         </div>
                     </div>
@@ -178,7 +178,7 @@
                                     <div class="text-muted">Hot and pungent; used globally</div>
                                     
                                 </div> 
-                                <button class="btn btn-primary w-100 rounded my-2">More</button>      
+                               
                             </div>
                         </div>
                     </div>
@@ -192,7 +192,7 @@
                                     <div class="text-muted">Delicate and floral; used in Persian, Spanish, and Indian dishes</div>
                                     
                                 </div> 
-                                <button class="btn btn-primary w-100 rounded my-2">More</button>      
+                                    
                             </div>
                         </div>
                     </div>
@@ -206,7 +206,7 @@
                                     <div class="text-muted">Licorice-like; used in Chinese five-spice and Vietnamese pho</div>
                                     
                                 </div> 
-                                <button class="btn btn-primary w-100 rounded my-2">More</button>      
+                                
                             </div>
                         </div>
                     </div>
@@ -220,7 +220,7 @@
                                     <div class="text-muted">Earthy and slightly bitter; widely used in Indian and Southeast Asian cuisine</div>
                                     
                                 </div> 
-                                <button class="btn btn-primary w-100 rounded my-2">More</button>      
+                               
                             </div>
                         </div>
                     </div>

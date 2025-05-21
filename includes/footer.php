@@ -16,10 +16,10 @@
             <a data-mdb-ripple-init class="btn btn-outline-primary btn-floating m-1 border border-white" href="#!" role="button"><i class="fab fa-instagram text-white"></i></a>
 
             <!-- Linkedin -->
-            <a data-mdb-ripple-init class="btn btn-outline-primary btn-floating m-1 border border-white" href="#!" role="button"><i class="fab fa-linkedin-in text-white"></i></a>
+            <a data-mdb-ripple-init class="btn btn-outline-primary btn-floating m-1 border border-white" href="https://www.linkedin.com/in/minoka-wickramasinghe-3b7198194/" role="button"><i class="fab fa-linkedin-in text-white"></i></a>
 
             <!-- Github -->
-            <a data-mdb-ripple-init class="btn btn-outline-primary btn-floating m-1 border border-white" href="#!" role="button"><i class="fab fa-github text-white"></i></a>
+            <a data-mdb-ripple-init class="btn btn-outline-primary btn-floating m-1 border border-white" href="https://github.com/Minokainduwara" role="button"><i class="fab fa-github text-white"></i></a>
         </section>
         <!-- Section: Social media -->
     </div>
