@@ -35,6 +35,9 @@ CREATE TABLE `spice`.`products` (
 INSERT INTO `products` (`id`, `name`, `image`, `price`, `file`, `description`, `status`, `created_at`) VALUES (NULL, 'Cinnamon Stick Bulk Package', 'cinnamon.jpeg', '20', 'file.pdf', 'Enjoy the true cinnamon flavor from our Ceylon Cinnamon Stick Bulk Package, filled with 5kg of the best cinnamon sticks being sourced directly from our plantations. Each stick is made from real Ceylon cinnamon (Cinnamomum verum / Cinnamomum zeylanicum), assuring that you receive only the best spice.', '1', current_timestamp()), (NULL, 'Pepper', 'pepper.jpeg', '10', 'file2.pdf', 'Discover the powerful flavor that comes from Sri Lankan Black Pepper, available in bulk. These little, dried berries from the Piper nigrum vine are completely selected to assure the greatest quality and strongest flavor.', '1', current_timestamp())
 
 
+CREATE TABLE `Spice`.`categories` (`id` INT(3) NOT NULL AUTO_INCREMENT , `name` VARCHAR(200) NOT NULL , `description` TEXT NOT NULL , `image` VARCHAR(200) NOT NULL , `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+
 
 
 CREATE TABLE `Spice`.`cart` (`id` INT NOT NULL AUTO_INCREMENT , `pro_id` INT(11) NOT NULL , `pro_name` VARCHAR(200) NOT NULL , `pro_image` VARCHAR(200) NOT NULL , `pro_price` INT(3) NOT NULL , `pro_amount` INT(3) NOT NULL , `pro_file` VARCHAR(200) NOT NULL , `user_id` VARCHAR(3) NOT NULL , `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`)) ENGINE = InnoDB;

@@ -127,7 +127,7 @@
         $(document).on("submit", function(e){
 
             e.preventDefault();
-            var formdata = $("#form-data").serialize() + '&submit = submit';
+            var formdata = $("#form-data").serialize() + '&submit=submit';
 
             $.ajax({
                 type: "post",
